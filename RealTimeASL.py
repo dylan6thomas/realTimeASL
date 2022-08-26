@@ -16,7 +16,7 @@ torch.manual_seed(1)
 
 labels=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y']
 
-root='C:/Users/waiku/Desktop/Python/Projects/Machine Learning/RealTimeASL/data'
+root='data'
 label=False
 
 while label:
@@ -186,7 +186,7 @@ print("MAX VALIDATION ACCURACY: ",max(useful_dict['val_acc']))
 print("MINIMUM VALIDATION LOSS: ",min(useful_dict['val_loss']))
 '''
 model=Net()
-model.load_state_dict(torch.load('C:/Users/waiku/Desktop/Python/Projects/Machine Learning/RealTimeASL/models'+'/model'+str(18)))
+model.load_state_dict(torch.load('models'+'/model'+str(18)))
 
 cv2.namedWindow('preview')
 vc=cv2.VideoCapture(0)
