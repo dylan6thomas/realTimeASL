@@ -17,7 +17,7 @@ torch.manual_seed(1)
 labels=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y']
 
 root='data'
-label=False
+label=True
 
 while label:
     if label==None:
@@ -125,7 +125,7 @@ model.apply(weight_init)
 criterion=nn.CrossEntropyLoss()
 optimizer=optim.Adam(model.parameters(),lr=0.001,weight_decay=0)
 useful_dict={'train_loss':[],'train_acc':[],'val_loss':[],'val_acc':[]}
-'''
+
 epochs=75
 for epoch in range(epochs):
     print("<<<<<<<<<<<<<<<EPOCH: ",epoch+1,'>>>>>>>>>>>>>>>')
@@ -184,7 +184,7 @@ plt.legend()
 plt.show()
 print("MAX VALIDATION ACCURACY: ",max(useful_dict['val_acc']))
 print("MINIMUM VALIDATION LOSS: ",min(useful_dict['val_loss']))
-'''
+
 model=Net()
 model.load_state_dict(torch.load('models'+'/model'+str(18)))
 
